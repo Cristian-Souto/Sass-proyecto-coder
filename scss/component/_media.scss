@@ -1,0 +1,39 @@
+/*===================MEDIA QUERIES=====================*/
+@media (max-width: 780px) {
+  .container {
+    flex-direction: column;
+  }
+  /* ============SECCION ACERCA ===========*/
+  .about-me {
+    width: 90%;
+  }
+  .about-me-title {
+    font-size: 2rem;
+  }
+  .about-me-text {
+    font-size: 1rem;
+    width: 100%;
+    margin: 14px;
+  }
+  .img-sobremi {
+    padding: 0;
+    display: none;
+    width: 100%;
+  }
+  /*========== NAVBAR CON  DISPLAY NONE  =============*/
+  .nav {
+    display: none;
+  }
+  /* =======SECCION PORTFOLIO======== */
+  .grid-galeria {
+    display: flex;
+    flex-direction: column;
+  }
+  /*=========FOOTER=============*/
+  .footer-copyright, hr {
+    display: none;
+  }
+  .footer {
+    height: auto;
+  }
+}
