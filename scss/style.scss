@@ -8,11 +8,15 @@
 /*variables*/
 @import './variables';
 /*component*/
+@import '../scss/base/mixins';
+@import '../scss/base/extends';
+@import '../scss/base/mapas';
 @import './component/header';
 @import './component/about';
 @import './component/footer';
 @import './component/media';
-@import '../scss/base/mapas';
+
+
 
 .contenedor {
   height: 100vh;

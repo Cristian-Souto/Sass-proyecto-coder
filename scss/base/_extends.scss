@@ -1,0 +1,12 @@
+%flexbox{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%heading {
+  color: $secondary-color;
+  font-family:$primary-font;
+  font-size: 3.5vw;
+  text-transform: uppercase;
+}

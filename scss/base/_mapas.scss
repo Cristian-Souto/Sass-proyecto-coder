@@ -1,9 +1,14 @@
-$styles_general:(
+$general_styles:(
+  bg-color: rgba(0,0,0,.6),
   mx: 0 auto 0,
-  bg-color:rgba(0, 0, 0, 0.5),
-  display: flex,
-  justify-content: space-between,
-  justify-content:center,
-  align-items: center,
-  height:100vh,
+  to-uppecase:uppercase,
+  opacity:.6,
+  to-lowercase: lowercase,
+);
+
+$colors: (
+  light-white: #ccc,
+  white:#fff,
+  dark: #000,
+  light-dark: #1A1110,
 );

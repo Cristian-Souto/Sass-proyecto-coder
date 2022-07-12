@@ -5,10 +5,9 @@
 }
 
 .about-me-title {
-  font-size: 3.5vw;
   margin-bottom: 20px;
-  text-transform: uppercase;
   text-align: center;
+  @extend %heading;
 }
 
 .about-me-text {

@@ -1,0 +1,11 @@
+@mixin animacion($value){
+  transform: ($value);
+  transition: all($value);
+}
+
+@mixin contenedores($display,$justify-content,$align-items,$ancho) {
+  display: $display;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  width:$ancho;
+}

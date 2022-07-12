@@ -1,9 +1,7 @@
 .header {
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: map-get($general_styles, bg-color);
 	padding: 0 4rem;
-	/* display: flex;
-	justify-content: space-between;
-	align-items: center; */
+	@extend %flexbox;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -20,11 +18,11 @@
 	margin: 8px 12px;
 	font-size: 1.2rem;
 	font-weight: 100;
-	text-transform: uppercase;
+	text-transform: map-get($general_styles , to-lowercase );
 }
 .nav-menu-link {
 	text-decoration: none;
-	color: white;
+	color: map-get($colors, light-white);
 	transition: ease 1.5s;
 	position: relative;
 	&::before {
@@ -34,7 +32,7 @@
 		height: 2px;
 		bottom: -6px;
 		background-color: #fff;
-		transform: scale(0);
+		transform:scale(0);
 		transition: all 0.4s;
 	}
 	&:hover::before {

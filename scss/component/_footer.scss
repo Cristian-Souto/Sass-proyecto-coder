@@ -1,17 +1,17 @@
 
 .footer {
   height: 20vh;
-  background-color: #191919;
+  background-color:$secondary-color;
 }
 
 .footer-social-media {
   height: 10vh;
   width: 150px;
-  margin: 0 auto;
+  margin: map-get($general_styles, mx );
 }
 
 .footer__copyright {
-  color: #fff;
+  color: map-get($colors , white);
   font-size: $small-size;
   text-align: center;
   padding: 15px 0;
@@ -22,11 +22,14 @@
   height: 10vh;
   padding: 20px;
   width: 150px;
-  display: flex;
+  /*display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: center; */
+  
 }
-
+.footer .lista-items-social{
+  @include contenedores(flex,space-evenly,center,150px)
+}
 .item-social:hover {
   opacity: 0.7;
 }
