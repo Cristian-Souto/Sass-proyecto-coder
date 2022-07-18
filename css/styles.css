@@ -10,14 +10,16 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr auto;
-  font-family: "Poppins", sans-serif;
-  /* background-color: #202011; */
+  font-family: 'Lato', sans-serif;
+  background-color: #222222;
+  color: #f3f3f3;
 }
 
 .header {
-  /* background-color: #191919; */
-  background-color: rgba(0, 0, 0, .2);
+  background-color: #343a40;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   padding: 0 1rem;
+  height:auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,7 +34,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto 0;
+  padding-top: 100px;
 }
 
 /*========================== CAROUSEL =====================*/
@@ -56,11 +58,27 @@ body {
 .carousel-caption h5{
   font-size: 3rem;
   font-weight: bold;
+  position:absolute;
+  top:-47vh;
+  left:0;
+  right: 0;
 }
 .carousel-caption p{
   font-size: 1.3rem;
+  position:absolute;
+  top:-30vh;
+  left:0;
+  right:0;
 }
-
+/*MEDIA QUERIE H5 Y P CAROULSEL A 631PX*/
+@media  (max-width:631px) {
+  .carousel-caption p{
+    top:-22vh;
+  }
+  .carousel-caption h5{
+    bottom:50%;
+  }
+}
 .carousel-img{
   width: 100%;
   height: 100%;
@@ -84,13 +102,14 @@ body {
   display: inline-block;
   margin: 8px 12px;
   font-size: 1.2rem;
-  text-transform: uppercase;
+  text-transform:uppercase;
+  letter-spacing: 1.5px;
 }
 .nav-menu-link {
   text-decoration: none;
-  color: white;
   transition: ease 1.5s;
   position: relative;
+  color:#cecece;
 }
 
 /*==================== ANIMACION LINKS NAVBAR =================*/
@@ -100,7 +119,7 @@ body {
   width: 100%;
   height: 2px;
   bottom: -6px;
-  background-color: #fff;
+  background-color: #f3f3f3;
   transform: scale(0);
   transition: all 0.4s;
 }
@@ -112,10 +131,9 @@ body {
 
 /*================== INICIO SECCION DE ESTILOS FOOTER =================*/
 .footer {
-  height: fit-content;
-  background-color: #191919;
+  background-color: #343a40;
+  height:auto;
 }
-
 .footer-social-media {
   height: 10vh;
   width: 150px;
@@ -124,7 +142,7 @@ body {
 
 .footer-copyright {
   color: #fff;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   text-align: center;
   padding: 15px 0;
 }
@@ -163,7 +181,7 @@ body {
 
 .about-me {
   width: 45%;
-  padding: 2rem 0 0 0;
+  padding: 1rem 0 0 0;
 }
 .about-me-title {
   font-size: 3.5vw;
@@ -172,9 +190,9 @@ body {
   text-align: center;
 }
 .about-me-text {
-  color: #191919;
+  color: #fff;
   font-size: 1.2vw;
-  line-height: 1.8;
+  line-height: 2;
   text-align: justify;
   padding:  0 2rem;
 }
@@ -184,7 +202,7 @@ body {
 }
 .img-sobremi {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 4px;
   object-fit: cover;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   transition: all 1s;
@@ -199,9 +217,9 @@ body {
 .grid-galeria {
   padding-top: 100px;
   display: grid;
-  gap: 4px;
+  gap:20px;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 150px 250px 300px 200px;
+  grid-template-rows: repeat(4, 200px);
 }
 .container-galeria-image-1 {
   grid-column: 1/4;
@@ -231,13 +249,56 @@ body {
 }
 .grid-title {
   position: absolute;
-  bottom: 535px;
+  top:110px;
   font-size: 2rem;
+  font-weight: 600;
 }
 .contenedor__portfolio {
-  padding: 2rem;
+  padding: 4rem 1rem;
 }
 /*================= FIN SECCION PORTFOLIO CON GRID =================*/
+
+/*=================== INICIO SECCION CLIENTES CON GRID ===============*/
+
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+  grid-auto-rows: minmax(250px,auto);
+  gap: 20px;
+  padding: 20px;
+  grid-auto-flow: dense;
+  padding-top: 150px;
+}
+@media(min-width:600px){
+  .wide{
+    grid-column: span 2;
+  }
+  .tall{
+    grid-row: span 2;
+  }
+}
+img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.grid-item{
+  overflow: hidden;
+  border-radius: 4px;
+  transition: transform 0.3s ease-in-out;
+}
+.grid-item:hover{
+  opacity: .9;
+  transform: scale(1.04);
+}
+.grid-title-cliente{
+  position: absolute;
+  top:100px;
+  left: 20px;
+  font-weight: 600;
+  padding: 8px 0 0 0;
+}
+/*================ FIN SECCION CLIENTES ===========================*/
 
 /*================== ANIMACION DE LA GALERIA =======================*/
 .overlay {
@@ -246,7 +307,7 @@ body {
   cursor: pointer;
 }
 .overlay::before {
-  content: "Imagen";
+  content: "";
   color: #f3f3f3;
   font-size: 1.5rem;
   position: absolute;
@@ -257,9 +318,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #5b40f3a6;
+  background-color: #b0babe69;
   transform: translate(100%);
-  transition: transform 0.4s;
+  transition: transform 0.2s;
 }
 .overlay:hover::before {
   transform: translate(0);
@@ -269,8 +330,7 @@ body {
 /*====================== INICIO SECCION CONTACTO ==========================*/
 
 .contenedor__contacto {
-  padding: 1rem;
-  padding-top: 90px;
+  padding: 3.5rem 1.5rem;
 }
 .content {
   max-width: 780px;
@@ -287,14 +347,14 @@ ul {
 .logo {
   text-align: center;
   font-size: 3em;
-  color: #b70e21;
-  margin-bottom: 1rem;
-  font-weight: 600;
+  color: #fff;
+  margin:1.5rem;
+  font-weight: 300;
 }
 
-.contact-wrapper {
+ .contact-wrapper {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
+} 
 
 .contact-wrapper > * {
   padding: 1em;
@@ -389,8 +449,15 @@ ul {
 
  @media (max-width:600px){
   .contenedor__contacto{
-    padding: 1rem;
+    padding:5rem 0;
   }
+  .logo{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+   .content{
+    padding: 0;
+  } 
 }
 /*==================== FIN SECCION CONTACTO =======================*/
 
@@ -400,13 +467,16 @@ ul {
   .container {
     flex-direction: column;
   }
-  /*------SECCION ACERCA--------*/
+  .contenedor{
+    padding: 0;
+  }
+  /*------ SECCION ACERCA --------*/
   .about-me {
-    /*  padding-top: 155px; */
+    padding-top: 100px;
     width: 90%;
   }
   .about-me-title {
-    font-size: 2rem;
+    font-size: 3rem;
   }
   .about-me-text {
     font-size: 1rem;
@@ -419,12 +489,13 @@ ul {
   .container-image{
     display: none;
   }
-  /*-----SECCION PORTFOLIO------*/
+  /*----- SECCION PORTFOLIO ------*/
   .grid-galeria {
     display: flex;
     flex-direction: column;
   }
-  /*----FOOTER----*/
+  
+  /*---- FOOTER ----*/
   .footer-copyright,
   hr {
     display: none;
@@ -432,8 +503,9 @@ ul {
   .footer {
     height: auto;
   }
-  .nav {
-    display: none;
+}
+@media (max-width:393px){
+  .grid-title{
+    top: 100px;
   }
 }
-
